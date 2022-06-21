@@ -71,11 +71,36 @@ git init: lo usamos para determinar la carpeta en la que vamos a trabajar.
 + **git status**: lo usamos para saber si tenemos un archivo añadido o borrado en nuestro proyecto, para saber en la rama en la que estamos y si tenemos commits.
 + **git add**: es para añadir un archivo a nuestra rama seguidamente ponemos entre comillas el nombre de nuestro archivo o poner un punto para añadir todos los archios de nuestra carpeta.
 + **git rm**: lo usamos para borrar un archivo que hayamos añadido, para eliminarlo por completo de nuestra rama usamosgit rm --cached.
-+ **git commit**: se usa para añadir un commit a nuestra rama, también podemos ponerle un -m seguidamente ponemos entre comillas nuestro ensaje.
++ **git commit**: se usa para añadir un commit a nuestra rama, también podemos ponerle un -m seguidamente ponemos entre comillas nuestro mensaje.
 + **git config**: muestra configuraciones de git también podemos usar –list para mostrar la configuración por defecto de nuestro git y si añadimos --show-origin inhales nos muestra las configuraciones guardadas y su ubicación.
 + **git config --global user.name**: cambia de manera global el nombre del usuario, seguidamente ponemos entre comillas nuestro nombre.
 + **git config --global user.email**: cambia de manera global el email del usuario, seguidamente ponemos entre comillas nuestro nombre.
 + **git log**: se usa para ver la historia de nuestros archivos, los commits, el usuario que lo cambió, cuando se realizaron los cambios etc. seguidamente ponemos el nombre de nuestro archivo.
+
+
+En este apartado vamos a agregar una lista más conmpleta de comandos
+
++ $ git init //inicializar el repositorio
++ $ git add nombre_de_archivo.extencion //Agregar el archivo al repositorio
++ $ git commit -m “Mensaje”// Agregamos los cambios para el repositorio
++ $ git add .// Agregar los cambios de la carpeta en la que nos encontramos agregar todo
++ $ git status // visualizar cambios
++ $ git log nombre_de_archivos.extencion //historico de cambios con detalles
++ $ git push //envia a otro repositorio remoto lo que estamos haciendo
++ $ git pull //traer repositorio remoto
++ $ ls //listado de carpetas en donde me encuentro es decir dir en windows
++ $ pwd //ubicacion actual
++ $ mkdir //make directori nueva carpeta
++ $ touch archivo.extencion//crear archivo vacio
++ $ cat archivo.extencion//muestra el contenido del archivo
++ $ history //historial de comandos utilizados durante esa sesion
++ $ rm archivo.extencion //eliminacion de archivo
++ $ comando --help //ayuda sobre el comando
++ $ checkout //traer cambios realizado
++ $ git rm --cached archivo.extencion//se usa para devolver el archivo que se tiene en ram cuando escribimos git add lo devuleve a estado natural mientra esta en staging
++ $ git config --list //muestra la lista de configuracion de git
++ $ git config --list --show-origin//rutas de acceso a la configuración de git
++ $ git log archivo.extencion //muestra la historia del archivo
 
 
 
