@@ -77,6 +77,8 @@ git init: lo usamos para determinar la carpeta en la que vamos a trabajar.
 + **git config --global user.name**: cambia de manera global el nombre del usuario, seguidamente ponemos entre comillas nuestro nombre.
 + **git config --global user.email**: cambia de manera global el email del usuario, seguidamente ponemos entre comillas nuestro nombre.
 + **git log**: se usa para ver la historia de nuestros archivos, los commits, el usuario que lo cambió, cuando se realizaron los cambios etc. seguidamente ponemos el nombre de nuestro archivo.
++ **git log --stat**: muestra los cambios especificos después de cada commit
++ **git diff**: muestra los cambios que se han hecho pero que se encuentran en estado de stage, los agregas utilizando git add
 
 
 En este apartado vamos a agregar una lista más conmpleta de comandos
