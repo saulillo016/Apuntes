@@ -231,6 +231,12 @@ Al trabajar con otras personas, es necesario utilizar un repositorio remoto.
 
 # Git Hub
 
+GitHub es una plataforma que nos permite guardar repositorios de Git que podemos usar como servidores remotos y ejecutar algunos comandos de forma visual e interactiva (sin necesidad de la consola de comandos).
+
+Luego de crear nuestra cuenta, podemos crear o importar repositorios, crear organizaciones y proyectos de trabajo, descubrir repositorios de otras personas, contribuir a esos proyectos, dar estrellas y muchas otras cosas.
+
+El README.md es el archivo que veremos por defecto al entrar a un repositorio. Es una muy buena práctica configurarlo para describir el proyecto, los requerimientos y las instrucciones que debemos seguir para contribuir correctamente.
+
 Paso a paso para subir tu proyecto a Git-hub
 
 ![](https://static.platzi.com/media/user_upload/github1-8a3f88c1-7c3c-4369-8171-9b97567f2203.jpg)
