@@ -228,3 +228,9 @@ Al trabajar con otras personas, es necesario utilizar un repositorio remoto.
   + El merge ocurre en la rama en la que se está posicionado. Por lo tanto, la rama a fusionar se transforma en la principal.
   + Los merges también son commits.
   + Los merges pueden generar conflictos, esto aborta la acción y pide que soluciones el problema manualmente, aceptando o rechazando los cambios que vienen.
+
+# Git Hub
+
+Paso a paso para subir tu proyecto a Git-hub
+
+![](https://static.platzi.com/media/user_upload/github1-8a3f88c1-7c3c-4369-8171-9b97567f2203.jpg)
