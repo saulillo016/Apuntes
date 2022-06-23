@@ -201,13 +201,13 @@ La cabecera o HEAD representan la rama y el commit de esa rama donde estamos tra
 
 **¿Cómo funcionan las ramas en Git?**
 
-+ git branch -nombre de la rama-: Con este comando se genera una nueva rama.
++ **git branch -nombre de la rama-**: Con este comando se genera una nueva rama.
 
-+ git checkout -nombre de la rama-: Con este comando puedes saltar de una rama a otra.
++ **git checkout -nombre de la rama-**: Con este comando puedes saltar de una rama a otra.
 
-+ git checkout -b rama: Genera una rama y nos mueve a ella automáticamente, Es decir, es la combinación de git brach y git checkout al mismo tiempo.
++**git checkout -b rama**: Genera una rama y nos mueve a ella automáticamente, Es decir, es la combinación de git brach y git checkout al mismo tiempo.
 
-+ git reset id-commit: Nos lleva a cualquier commit no importa la rama, ya que identificamos el id del tag., eliminando el historial de los commit posteriores al tag seleccionado.
++ **git reset id-commit**: Nos lleva a cualquier commit no importa la rama, ya que identificamos el id del tag., eliminando el historial de los commit posteriores al tag seleccionado.
 
-+ git checkout rama-o-id-commit: Nos lleva a cualquier commit sin borrar los commit posteriores al tag seleccionado.
++ **git checkout rama-o-id-commit**: Nos lleva a cualquier commit sin borrar los commit posteriores al tag seleccionado.
 
