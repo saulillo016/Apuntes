@@ -193,7 +193,7 @@ Adicionalmente, tenemos otros comandos que nos sirven para trabajar en proyectos
 + git log -S “Por contenido”: Buscar los commits con el contenido dentro del archivo.
 + git log > log.txt: guardar los logs en un archivo txt
 
-# Ramas o branches de Git#
+## Ramas o branches de Git#
 
 Las ramas son al forma de hacer cambios en nuestro proyecto sin afectar el flujo de la rama principal. Esto porque queremos trabajar una parte muy especifica de la aplicación o simplemente experimentar. 
 
@@ -213,3 +213,18 @@ La cabecera o HEAD representan la rama y el commit de esa rama donde estamos tra
 
 + **git checkout rama-o-id-commit**: Nos lleva a cualquier commit sin borrar los commit posteriores al tag seleccionado.
 
+
+## Repositorios remotos y ramas o branch
+
+Al trabajar con otras personas, es necesario utilizar un repositorio remoto.
+­
++ Para copiar el repositorio remoto al directorio de trabajo local, se utiliza el comando git clone <url>, y para enviar cambios al repositorio remoto se utiliza git push.
++ Para actualizar el repositorio local se hace uso del comando git fetch, luego se debe fusionar los datos traídos con los locales usando git merge.
+
+  + Para traer los datos y fusionarlos a la vez, en un solo comando, se usa git pull.
+  + Para crear commits rápidamente, fusionando git add y git commit -m "", usamos git commit -am "".
+  + Para generar nuevas ramas, hay que posicionarse sobre la rama que se desea copiar y utilizar el comando git branch <nombre>.
+  + Para saltar entre ramas, se usa el comando git checkout <branch> ­- Una vez realizado los cambios en la rama, estas deben fusionarse con git merge.
+  + El merge ocurre en la rama en la que se está posicionado. Por lo tanto, la rama a fusionar se transforma en la principal.
+  + Los merges también son commits.
+  + Los merges pueden generar conflictos, esto aborta la acción y pide que soluciones el problema manualmente, aceptando o rechazando los cambios que vienen.
