@@ -201,6 +201,8 @@ La cabecera o HEAD representan la rama y el commit de esa rama donde estamos tra
 
 **¿Cómo funcionan las ramas en Git?**
 
+![](https://static.platzi.com/media/user_upload/Git%20y%20GitHub-1-efd7383d-2bba-4fad-b73f-00813a95efbc.jpg)
+
 + **git branch -nombre de la rama-**: Con este comando se genera una nueva rama.
 
 + **git checkout -nombre de la rama-**: Con este comando puedes saltar de una rama a otra.
