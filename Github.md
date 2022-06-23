@@ -73,6 +73,7 @@ git init: lo usamos para determinar la carpeta en la que vamos a trabajar.
 + **git add**: es para añadir un archivo a nuestra rama seguidamente ponemos entre comillas el nombre de nuestro archivo o poner un punto para añadir todos los archivos de nuestra carpeta.
 + **git rm**: lo usamos para borrar un archivo que hayamos añadido, para eliminarlo por completo de nuestra rama usamos git rm --cached.
 + **git commit**: se usa para añadir un commit a nuestra rama, también podemos ponerle un -m seguidamente ponemos entre comillas nuestro mensaje.
++ **git commit - am "mensaje"**: hace simultáneamente un add y un commit
 + **git config**: muestra configuraciones de git también podemos usar –list para mostrar la configuración por defecto de nuestro git y si añadimos --show-origin inhales nos muestra las configuraciones guardadas y su ubicación.
 + **git config --global user.name**: cambia de manera global el nombre del usuario, seguidamente ponemos entre comillas nuestro nombre.
 + **git config --global user.email**: cambia de manera global el email del usuario, seguidamente ponemos entre comillas nuestro nombre.
@@ -210,4 +211,3 @@ La cabecera o HEAD representan la rama y el commit de esa rama donde estamos tra
 
 + git checkout rama-o-id-commit: Nos lleva a cualquier commit sin borrar los commit posteriores al tag seleccionado.
 
-m,e gustanwsmalnsjkwwejhsdkljfhlekwrjhefilhfnslñknfio
