@@ -225,12 +225,20 @@ Objetivo: hacer un solo lenguaje que unifica a todos los visualizadores de datos
 Por otro lado tenemos bases de datos no relacionales como **NOSQL** (Not Sonly Structured Query Language)
 ![](https://edteam-media.s3.amazonaws.com/community/original/4cf4f171-bd37-4164-988a-d9f8b98e1838.jpg)
 
-### DML
+### DDL
+
+Formar la estructura de la base de datos, se utiliza al inicio del proyecto principalmente
+
 
 SQL tiene dos grandes sublenguajes, el más grande de ellos es DDL (Data Definition Language) que nos ayuda a crear las estructuras de una base de datos. Se trata de un lenguaje procedimental y declarativo conjunto de instrucciones que apoyarán al proceso de construcción de la BD
-Las sentencias DML afectan los registros en una tabla. Estas son operaciones básicas que realizamos sobre datos tales como seleccionar algunos registros de una tabla, insertar nuevos registros, eliminar registros innecesarios y actualizar / modificar registros existentes.
+Las sentencias DDL afectan los registros en una tabla. Estas son operaciones básicas que realizamos sobre datos tales como seleccionar algunos registros de una tabla, insertar nuevos registros, eliminar registros innecesarios y actualizar / modificar registros existentes.
 
 - Create: Nos ayuda a crear bases de datos, tablas, vistas, índices, etc.
+
+**CREATE DATABASE** test_db: nos ayudara a crear una base de datos y ponerle un nombre.
+**USE DATABASE** test_db: Lo usamos para indicar que base de datos de todas las que tenemos queremos utilizar.
+
+
 - Alter: Ayuda a alterar o modificar entidades.
 - Drop: Nos ayuda a borrar. Hay que tener cuidado al utilizarlo.
 
@@ -245,7 +253,6 @@ Las sentencias DML afectan los registros en una tabla. Estas son operaciones bá
 - Se crea con _CREATE VIEW _ (nombreDeLaVista) AS
 SELECT… (por ej. FROM platziblog.people, es decir de cada persona de platziblog -> hacer algo, por ejemplo, trabajar con un atributo, o filtrarla, etc.).
 - En el Workbench, se hace click derecho en Views -> Create View, y luego va la sentencia de arriba.
-Alter
 
 **Alter table** 
 nos permite modificar nuestra tabla. Para hacerlo en el Workbench, luego de crear la tabla, hacemos click derecho en ella -> Alter Table. Alli podremos añadir o quitar atributos, constraints, etc.
@@ -256,21 +263,132 @@ nos permite modificar nuestra tabla. Para hacerlo en el Workbench, luego de crea
 - Para eliminar una tabla: DROP TABLE (nombre_De_La_Tabla);
 - Para eliminar una base de datos: DROP DATABASE (nombre_de_la_base);
 
+### DML (Data Manipulation Language)
 
 
+Nos permite manipular la base de datos ya una vez creada y cuanta con los siguientes comandos:
 
 
++ **Insert**: agrega un nuevo registro a nuestra tabla de bases de datos, se menciona insertar utilizando **INSERT INTO** y hacia donde se inserta. Ejemplo:
+
+```MySQL
+INSERT INTO people (last_name, first_name, address, city)
+VALUES (´Hernandez´, ´Laura´, ´Calle 21´, ´Monterrey´)
+```
++ **Update**: Actualiza o cambia los datos que ya tenemos. 
+  + Necesitamos establecer a que tabla queremos que se dirija para hacer el cambio: UPDATE: people. 
+  + Después se le menciona que cambiar: SET last_name = "Chavez", city= "Merida". 
+  + Por ultimo se le define donde realizar los cambios: WHERE person_id =1. Ejemplo:
+```MySQL
+UPDATE: people
+SET last_name = "Chavez", city= "Merida"
+WHERE person_id =1;
+```
+Tener mucho cuidado con establecer la condición WHERE, porque sio no se menciona se cambiarían todos los datos de la Base de datos a los definidos *Siempre usar Where para definir donde hacer el cambio*
++ Delete: borra todo loq ue indiquemos que se borre, Ejemplo:
+```MySQL
+DELETE FROM people
+WHERE person_id= 1;
+ ```
+
+ De nuevo, si no especificamos el WHERE se podría borrar toda nuestra información. *Tener mucho cuidado de establecer bien el WHERE*
++ Select: Nos trae información de la base de datos: Ejemplo:
 
 
+```MySQL
+SELECT first_name, last_name 
+FROM people
+ ```
+----
+## ¿Qué tan estándar es SQL?
+
+Bastante estándar, se puede utilizar tanto en repositorios locales como en la nube sin ningún problema, los lenguajes de DDL y DML, son de alto uso en la industria.
+
+### Creando una bse de datos: tablas independientes.
+
+Se creara un blog de acuerdo a un diagrama físico:
+![](https://static.platzi.com/media/user_upload/Capturatable-917266aa-7d16-413d-be30-3ef6f47faac0.jpg)
+
+### Tablas dependientes
+
+Las Foreing Key options son las siguientes:
+
+On update: Significa qué pasará con las relaciones cuando una de estas sea modificada en sus campos relacionados, Por ejemplo, pueden utilizarse los valores:
+cascade: Si el id de un usuario pasa de 11 a 12, entonces la relacion se actualizará y el post buscará el id nuevo en lugar de quedarse sin usuario.
+_ restrict: _Si el id de un usuario pasa de 11 a 12, no lo permitirá hasta que no sean actualizados antes todos los post relacionados.
+set null Si el id de un usuario pasa de 11 a 12, entonces los post solo no estará relacionados con nada.
+no action: Si el id de un usuario pasa de 11 a 12, no se hará nada. Solo se romperá la relación.
+On delete
+_ cascade: Si un usuario es eliminado entonces se borrarán todos los post relacionados.
+restrict: No se podrá eliminar un usuario hasta que sean eliminados todos su post relacionados.
+_ set null: Si un usuario es eliminado, entonces los post solo no estará relacionados con nada.
+no action: Si un usuario es eliminado, no se hará nada. Solo se romperá la relación.
+
+## Consultas
+Una consulta bien hecha puede salvar a una empresa si esta bien elaborada. Tenemos mucha información que por si sola no representa nada, pero que si la unimos en un Query podemos descubrir un informe o un tendencia. 
+
+Las consultas o Query en una base de datos juegan un papel muy fundamental, puesto que facilitan de manera considerable los procesos en cualquier empresa.
+**ETL** Corresponde al acrónimo de:
+
++ **Extract**(extraer)
++ **Transform**(transformar)
++ **Load** (Cargar)
+
+
+ETL hacer parte del proceso de integración de datos, más uan es un componentes muy importante que completa el resultado final en la relación de aplicaciones sy sistemas.
+
+### Estructura básica de un Query
+
+Los queries son la forma en la que estructuramos las preguntas que se harán a la base de datos. Transforma preguntas en sintaxis.
+
+El query tiene básicamente 2 partes: SELECT y FROM y puede aparecer una tercera como WHERE.
+
+La estrellita o asterisco (*) quiere decir que vamos a seleccionar todo sin filtrar campos.
+
+Como le hacemos preguntas a las bases de datos? Los queries transforman nuestras preguntas en el lenguaje que utiliza la base de datos.
+Dos partes mas una tercera opcional:
+**SELECT** : que datos queremos obtener (que columnas/campos de la tabla).
+**FROM** : de donde los queremos obtener (de que tabla, por ejemplo).
+**WHERE** : condicion que deben cumplir o filtro que deben pasar los datos a obtener. Es opcional, pero se suele utilizar, ya que sino se obtienen todos los datos sin filtrar ninguno.
+Otras sentencias:
+**GROUP BY** : de que manera agrupamos los datos (en este caso agrupa por ciudad).
+**ORDER BY** : de que manera ordenamos los datos (en este caso, por poblacion).
+**HAVING** : otra manera de filtrar los datos.
+
+![](https://static.platzi.com/media/user_upload/SQL-torpedo-1f000591-7381-4596-ba4d-95667a3c10e0.jpg)
+
+#### SELECT
+
+SELECT trata de proyectar, o de presentar. 
+SELECT no puede funcionar por si solo, siempre necesitara del FROM
+
+Cuando queremos traer todos los atributos de una tabla, podemos usar el asterisco (*) para omitir colocar todos atributos al lado del SELECT uno por uno.
 
   
+El nombre de las columnas o campos que estamos consultando puede ser cambiado utilizando AS después del nombre del campo y poniendo el nuevo que queremos tener:
 
 
+```MySQL
+SELECT titulo AS encabezado
+FROM posts;
+ ```
+
+Existe una función de SELECT para poder contar la cantidad de registros. Esa información (un número) será el resultado del query:
 
 
+```MySQL
+SELECT COUNT(*)
+FROM posts;
+ ```
 
 
+#### FROM
 
+FROM indica de dónde se deben traer los datos y puede ayudar a hacer sentencias y filtros complejos cuando se quieren unir tablas. La sentencia compañera que nos ayuda con este proceso es JOIN.
 
+Los diagramas de Venn son círculos que se tocan en algún punto para ver dónde está la intersección de conjuntos. Ayudan mucho para poder formular la sentencia JOIN de la manera adecuada dependiendo del query que se quiere hacer.
 
+![](https://static.platzi.com/media/user_upload/FROM%20en%20Fundamentos%20de%20Bases%20de%20Datos%20-%20Google%20Chrome%2029_03_2020%2004_06_00%20p.%20m.%20%282%29-0c28b9b8-7b06-4a28-b1dc-7cbe87669406.jpg)
+![](https://static.platzi.com/media/user_upload/FROM%20en%20Fundamentos%20de%20Bases%20de%20Datos%20-%20Google%20Chrome%2029_03_2020%2004_07_53%20p.%20m.%20%282%29-212ac551-e5b9-448d-aaef-eb27b9d174b9.jpg)
+![](https://static.platzi.com/media/user_upload/yku64jkyz9121-8283dcd6-59b2-49e3-9c83-1a189379e380.jpg)
 
