@@ -173,7 +173,18 @@ Hay dos formas de utilizar git reset: con el argumento --hard, borrando toda la 
 + **git merge**: También usamos el comando git merge con servidores remotos. Lo necesitamos para combinar los últimos cambios del servidor remoto y nuestro directorio de trabajo.
 + **git pull**: Básicamente, git fetch y git merge al mismo tiempo.
 
-Adicionalmente, tenemos otros comandos que nos sirven para trabajar en proyectos muy grandes:
+
+**A partir de ahora para subir cualquier archivo al repositorio remoto se debara de escribir de la siguiente manera**
+
+: ***$ git push origin master:main***
+
+Paso a paso para subir tu proyecto a GitHub
+Recordemos que desde hace tiempo se cambio la rama para llamarse main en vez de master, por lo que los comandos a seguir serán un poco distintos
+![](https://static.platzi.com/media/user_upload/github1-8a3f88c1-7c3c-4369-8171-9b97567f2203.jpg)
+
+
+
+**Adicionalmente, tenemos otros comandos que nos sirven para trabajar en proyectos muy grandes:**
 
 + git log --oneline:Te muestra el id commit y el título del commit.
 + git log --decorate: Te muestra donde se encuentra el head point en el log.
