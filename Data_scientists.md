@@ -1,0 +1,1 @@
+Todo lo crucial relacionado con la Data, tiene que ver con la creatividad. Que tan creativo eres con lo que sabes sobre los datos. 
